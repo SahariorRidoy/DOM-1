@@ -60,20 +60,31 @@
 <h1>We Use this Event Listen</h1>
 <button onclick=mostUsed()>Grey Button</button>
 <h2 id="paraToChange">Handle on click</h2>
-</section>
+
+<p id="text">Default Text</p>
+<input id="input" type="text" >
+<button id="btn-update">Update</button>
+<br>
+<br>
 <button onclick=handler()>Handle on click first</button>
        
+<button id="event-listener">addEventListener</button>
+</section>
 </main>
 
  <!-- Script File -->
     <script src="js/dom.js"></script>
     <script src="js/weuse.js"></script>
     <script>
-        function handler(){
-            const handlerStatusChange=document.getElementById('paraToChange');
-            handlerStatusChange.innerText='Status Changed by handle button'
-        }
-       
+document.getElementById('btn-update').addEventListener('click',function(){
+    const inputField=document.getElementById('input');
+    const inputValue=(inputField.value);
+    const text=document.getElementById('text');
+    text.innerText=inputValue;
+    inputField.value='';
+    
+});
+
     </script>
 </body>
 </html>

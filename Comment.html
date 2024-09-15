@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+</head>
+<body>
+    <main>
+        <h1>Comment Box</h1>
+        <div id="parentDiv">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis soluta nemo similique ex quos, labore debitis fugiat dolor nesciunt ab!</p>
+            <p>Inventore ipsum sapiente voluptatum nemo suscipit voluptate tempore pariatur sit, esse repellat minima est numquam ex possimus. Quaerat, ullam assumenda.</p>
+            <p>Accusantium iusto est doloribus fugiat ducimus aperiam cupiditate consequuntur ratione reprehenderit harum? Rem, eaque? Ipsa rem repellat provident. Maxime, error.</p>
+        </div>
+        <div>
+            <textarea name="" id="new-comment" cols="50" rows="10"></textarea>
+            <br>
+            <button id="btn-post">Post</button>
+        </div>
+    </main>
+    
+
+    <!-- Script -->
+     <script>
+        //Step 1 add btn 
+        document.getElementById('btn-post').addEventListener('click',function(){
+        //Step 2 get textarea
+            const commentBox=document.getElementById('new-comment');
+            const inputText=commentBox.value;
+        //Step 3 set the text into parentDiv
+            // 3.1.get parent container
+            // 3.2.create new element 
+            // 3.3.set the text into new element p
+            // 3.4.add the element p using append
+            const parent=document.getElementById('parentDiv');
+            const paragraph=document.createElement('p')
+            paragraph.innerText=inputText;
+            parent.appendChild(paragraph);
+            commentBox.value=''
+        })
+     </script>
+</body>
+</html>
